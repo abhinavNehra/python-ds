@@ -87,59 +87,7 @@ print('pop value', stack.pop())
 print('print stack---', stack)
 print('stack is empty---', stack.is_empty())
 print('stack seize ---', stack.size())			
-			
 
-#Some question for stack
-#1) reverse string using stack
-
-			
-class ReverseString(Stack):
-	
-	def start(self):
-		
-		result  = ""
-		current = self.header
-		
-		while current != None:
-			result += current.data
-			current = current.next
-		
-		return result
-
-
-reverse = ReverseString()
-reverse.push("h")
-reverse.push("e")
-reverse.push("l")
-reverse.push("l")
-reverse.push("o")
-print('reverse ', reverse.start())
-		
-
-# Text editor undo and redo function	
-def textEditor(string, actions):
-	stack = Stack()
-	history_stack = Stack()
-	
-	for i in range(len(string)):
-		stack.push(string[i])
-		
-	
-	for i in range(len(actions)):
-		if actions[i] == 'u':
-			value = stack.pop()
-			history_stack.push(value)
-		else:
-			value = history_stack.pop()
-			stack.push(value)
-	
-	print(stack)
-
-textEditor('hello', 'uurruu')
-		
-
-
-			
 			
 			
 			
